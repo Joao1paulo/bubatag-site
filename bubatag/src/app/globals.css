@@ -53,3 +53,140 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------- */
+
+
+/* Navbar */
+
+
+/* ===== Animação de sublinhado e brilho para os links da navbar ===== */
+
+/* animação do brilho */
+@keyframes glowLine {
+  0% {
+    box-shadow: 0 0 0px #06D001;
+  }
+  50% {
+    box-shadow: 0 0 10px #06D001;
+  }
+  100% {
+    box-shadow: 0 0 0px #06D001;
+  }
+}
+
+/* classe base para links da navbar */
+.nav-link {
+  position: relative;           /* preciso para posicionar ::after */
+  display: inline-block;
+}
+
+/* ::after atua como sublinhado que cresce da esquerda pra direita */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;                 /* ajuste vertical conforme necessidade */
+  height: 2px;
+  width: 0;
+  background: #06D001;
+  transition: width 0.45s cubic-bezier(.2,.9,.2,1), opacity 0.3s;
+  opacity: 0.95;
+  border-radius: 2px;
+}
+
+/* on hover: expande o sublinhado e aplica um brilho animado */
+.nav-link:hover::after {
+  width: 100%;
+  animation: glowLine 1.2s ease-in-out;
+}
+
+/* opcional: pequena elevação + glow no próprio link ao passar o mouse */
+.nav-link:hover {
+  transform: translateY(-2px);
+  transition: transform 180ms ease;
+  text-shadow: 0 0 6px rgba(6,208,1,0.12);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------------------------------- */
+
+
+
+
+/* Animação Footer */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== ANIMAÇÕES PERSONALIZADAS ===== */
+
+/* Fade sutil ao surgir */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+.animate-fadeSlide {
+  animation: fadeSlide 1s ease-out forwards;
+}
+
+/* Flutuação suave do logo */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 3.5s ease-in-out infinite;
+}
+
+/* Luz passando pela borda */
+@keyframes lightSweep {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(100%);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+}
+.animate-lightSweep {
+  animation: lightSweep 5s ease-in-out infinite;
+}
+
+

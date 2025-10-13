@@ -3,14 +3,15 @@ import Image from "next/image";
 export default function Sobre() {
   return (
     <>
-      <div className="flex w-full justify-center px-4 py-0" id="sobre">
+      <div className="flex w-full justify-center px-4 py-0 pb-[15vh] font-[Lato]" id="sobre">
 
-        <div className="flex max-w-6xl flex-col gap-0">
+        <div className="flex max-w-6xl flex-col ">
             
           {/* --- Primeira Seção --- */}
-          <div className="flex flex-col-reverse items-center md:flex-row font-[Lato] gap-[15vh]" id="1">
+          <div className="flex flex-col-reverse items-center md:flex-row gap-[15vh]" id="1">
             <div className="w-full text-center md:w-1/2 md:text-left">
-              <h2 className="h-auto text-left text-5xl md:text-6xl font-bold font-[Fonarto] bg-gradient-to-r from-[#06D001] to-[#036A01] bg-clip-text text-transparent mb-10">
+
+              <h2 className="h-auto text-left text-5xl md:text-6xl font-bold font-[Fonarto] bg-gradient-to-r from-[#05a702] to-[#06D001] bg-clip-text text-transparent mb-10">
                 Sobre o Projeto
               </h2>
               <p className="text-lg md:text-xl leading-relaxed">
@@ -19,8 +20,9 @@ export default function Sobre() {
                 dos animais para rastrear localização, monitorar batimentos
                 cardíacos e níveis de estresse.
               </p>
+              
             </div>
-            <div className="relative h-82 w-full md:h-[32rem] md:w-[65vh]">
+            <div className="relative h-82 w-full md:h-[25rem] md:w-[65vh]">
               <Image
                 src="/imgs/sobre1.png"
                 alt="Ilustração do sistema de monitoramento"
