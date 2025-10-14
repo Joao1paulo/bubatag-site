@@ -5,6 +5,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer
+    data-aos="fade-down" data-aos-easing="ease" data-aos-duration="800"
       className="w-full relative bg-gradient-to-b from-[#0A0601] to-[#050300] 
                  flex flex-col md:flex-row items-center md:items-start justify-between 
                  px-6 md:px-16 py-12 border-t-4 border-[#E0830F] overflow-hidden"

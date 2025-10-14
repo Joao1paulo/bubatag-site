@@ -1,3 +1,7 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+@import 'aos/dist/aos.css'; 
+
 @font-face {
   font-family: 'Fonarto';
   src: url('/fonts/Fonarto.ttf') format('truetype');
@@ -19,8 +23,7 @@
   font-style: normal;
 }
 
-@import "tailwindcss/preflight";
-@tailwind utilities;
+
 
 
 
@@ -186,7 +189,7 @@ body {
   }
 }
 .animate-lightSweep {
-  animation: lightSweep 5s ease-in-out infinite;
+  animation: lightSweep 2s ease-in-out infinite;
 }
 
 

@@ -3,12 +3,14 @@ import Image from "next/image";
 export default function Sobre() {
   return (
     <>
-      <div className="flex w-full justify-center px-4 py-0 pb-[15vh] font-[Lato]" id="sobre">
+      <div 
+      className="flex w-full justify-center px-4 py-0 pb-[15vh] font-[Lato]" id="sobre">
 
         <div className="flex max-w-6xl flex-col ">
             
           {/* --- Primeira Seção --- */}
-          <div className="flex flex-col-reverse items-center md:flex-row gap-[15vh]" id="1">
+          <div data-aos="fade-down" data-aos-easing="ease" data-aos-duration="800"
+            className="flex flex-col-reverse items-center md:flex-row gap-[15vh]" id="1">
             <div className="w-full text-center md:w-1/2 md:text-left">
 
               <h2 className="h-auto text-left text-5xl md:text-6xl font-bold font-[Fonarto] bg-gradient-to-r from-[#05a702] to-[#06D001] bg-clip-text text-transparent mb-10">
@@ -34,7 +36,8 @@ export default function Sobre() {
           </div>
 
           {/* --- Segunda Seção --- */}
-          <div className="flex flex-col items-center gap-[15vh] md:flex-row  " id="2">
+          <div data-aos="fade-down" data-aos-easing="ease" data-aos-duration="800" 
+           className="flex flex-col items-center gap-[15vh] md:flex-row  " id="2">
             <div className="relative h-72 w-full md:h-[32rem] md:w-1/2">
               <Image
                 src="/imgs/sobre2.png"

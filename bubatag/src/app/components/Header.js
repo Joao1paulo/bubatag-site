@@ -2,7 +2,10 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <section
+    <section 
+    data-aos="fade-down"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000"
       className="relative flex h-[85vh] w-full items-center justify-center bg-cover bg-center  p-10"
       style={{ backgroundImage: "url('/imgs/header.png')" }}
     >
