@@ -1,7 +1,10 @@
-@import "tailwindcss/preflight";
+@tailwind base;
+@tailwind components;
 @tailwind utilities;
-@import 'aos/dist/aos.css'; 
 
+@import 'aos/dist/aos.css';
+
+/* ===== FONTES ===== */
 @font-face {
   font-family: 'Fonarto';
   src: url('/fonts/Fonarto.ttf') format('truetype');
@@ -24,8 +27,29 @@
 }
 
 
+/* Sombra Header */
 
+/* Sombra suave no texto */
+.text-shadow {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
 
+/* Opcional: versões mais leves ou mais fortes */
+.text-shadow-md {
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.75);
+}
+
+.text-shadow-lg {
+  text-shadow: 4px 4px 16px rgba(0, 0, 0, 0.9);
+}
+
+.text-outline {
+  -webkit-text-stroke: 1.2px rgba(0,0,0,0.7);
+}
+
+.text-drop-shadow {
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.7));
+}
 
 
 
