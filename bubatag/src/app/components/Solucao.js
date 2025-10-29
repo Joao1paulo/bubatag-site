@@ -37,7 +37,7 @@ export default function Solucao() {
     shadow-md p-4" id="pitch">
       <iframe
         className="absolute inset-0 h-full w-full"
-        src="https://www.youtube.com/embed/LrFOk0pyt7c"
+        src="https://www.youtube.com/embed/-KvMIc0DArY"
         title="YouTube video player"
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
