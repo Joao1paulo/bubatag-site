@@ -23,7 +23,7 @@ export default function Header() {
       <div
         className="absolute inset-0 z-10"
         style={{
-          backgroundImage: "linear-gradient(to top, #2f3e46 0%, transparent 90%)",
+          backgroundImage: "linear-gradient(to top, #2f3e46 5%, transparent 90%)",
         }}
       ></div>
 
