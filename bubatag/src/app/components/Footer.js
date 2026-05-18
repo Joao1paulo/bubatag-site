@@ -1,85 +1,57 @@
-import { FaInstagram, FaFacebook, FaWhatsapp } from "react-icons/fa";
-import Image from "next/image";
-import Link from "next/link";
-
 export default function Footer() {
   return (
-    <footer
-      className="w-full bg-gradient-to-b from-[#0A0601] to-[#050300] 
-                 flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between
-                 px-6 md:px-16 py-12 border-t-4 border-[#E0830F] relative overflow-hidden"
-    >
-      {/* Linha de luz animada */}
-      <div className="absolute top-0 left-0 w-full h-[4px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#FFD38A] to-transparent animate-lightSweep opacity-80" />
-      </div>
+    <footer className="w-full bg-[#3A3A3A] text-white relative">
+      <style>{`
+        @keyframes neon-line-glow {
+          0%, 100% {
+            box-shadow: 0 0 6px #E0830F, 0 0 15px rgba(224, 131, 15, 0.4);
+            background-color: #E0830F;
+          }
+          50% {
+            box-shadow: 0 0 12px #FCB460, 0 0 25px rgba(224, 131, 15, 0.8);
+            background-color: #FCB460;
+          }
+        }
+        .animate-neon-line {
+          animation: neon-line-glow 2s ease-in-out infinite;
+        }
+      `}</style>
 
-      {/* LOGO */}
-      <div className="flex-shrink-0 mb-8 md:mb-0 animate-float">
-        <Image
-          src="/imgs/krono-logo.svg"
-          alt="Logo"
-          width={120}  // reduzido para mobile
-          height={120}
-          className="object-contain"
-        />
-      </div>
+      <div className="w-full h-[4px] animate-neon-line" aria-hidden="true" />
 
-      {/* Informações */}
-      <div className="flex flex-col md:flex-row gap-8 md:gap-[15vh] text-white text-left md:text-left w-full md:w-auto">
-        {/* Endereço */}
-        <div className="animate-fadeSlide delay-[0.2s] text-left md:text-left">
-          <h3 className="text-[#E0830F] text-lg font-semibold mb-2">
-            Endereço
-          </h3>
-          <hr />
-          <p className="text-sm leading-relaxed pt-2">
-            Rua das Palmeiras, 123
-            <br />
-            Centro – Vale do Ribeira
-            <br />
-            São Paulo, SP
-          </p>
-        </div>
-
-        {/* Redes sociais */}
-        <div className="animate-fadeSlide delay-[0.4s] text-left md:text-left">
-          <h3 className="text-[#E0830F] text-lg font-semibold mb-2">
-            Redes Sociais
-          </h3>
-          <hr />
-          <div className="flex justify-start items-center gap-4 pt-2">
-            <Link
-              href="#"
-              className="transform transition-transform hover:scale-125 hover:text-[#E0830F]"
-            >
-              <FaInstagram className="h-6 w-6" />
-            </Link>
-            <Link
-              href="#"
-              className="transform transition-transform hover:scale-125 hover:text-[#E0830F]"
-            >
-              <FaFacebook className="h-6 w-6" />
-            </Link>
-            <Link
-              href="#"
-              className="transform transition-transform hover:scale-125 hover:text-[#E0830F]"
-            >
-              <FaWhatsapp className="h-6 w-6" />
-            </Link>
+      {/* Padding reduzido no mobile para compensar telas pequenas */}
+      <div className="max-w-6xl mx-auto px-6 py-10 lg:py-12">
+        
+        {/* Gap reduzido no mobile (gap-6) e ampliado no desktop (lg:gap-8) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-8 items-center text-center">
+          
+          <div className="flex items-center justify-center">
+            <img src="/imgs/krono-logo.svg" alt="Krono" className="h-16 lg:h-20 w-auto" />
           </div>
+
+          <div className="flex flex-col items-center mt-4 sm:mt-0">
+            <h3 className="font-sans font-bold text-base text-white mb-1">Nosso endereço</h3>
+            <p className="font-sans text-sm text-white/90">Av. Clara Gionotti de Souza 257</p>
+            <p className="font-sans text-sm text-white/90">Registro-SP</p>
+          </div>
+
+          <div className="flex flex-col items-center mt-4 md:mt-0">
+            <h3 className="font-sans font-bold text-base text-white mb-1">Nessas redes sociais</h3>
+            <p className="font-sans text-sm text-white/90">@Krono</p>
+            <p className="font-sans text-sm text-white/90">Para todas as redes</p>
+          </div>
+
+          <div className="flex flex-col items-center max-w-[130px] mx-auto mt-4 md:mt-0">
+            <h3 className="font-sans font-bold text-base text-white mb-1">Número para contato</h3>
+            <p className="font-sans text-sm text-white/90">(55) +13 98195-2523</p>
+          </div>
+
         </div>
 
-        {/* Contato */}
-        <div className="animate-fadeSlide delay-[0.6s] text-left md:text-left">
-          <h3 className="text-[#E0830F] text-lg font-semibold mb-2">Contato</h3>
-          <hr />
-          <p className="text-sm leading-relaxed pt-2">
-            contato@raffus.com.br
-            <br />
-            (13) 99999-9999
-          </p>
+        <div className="mt-10 lg:mt-12 flex items-center justify-center">
+          <p className="font-sans text-xl lg:text-2xl tracking-wider text-white">@Krono</p>
         </div>
+
       </div>
     </footer>
   );
