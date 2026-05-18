@@ -6,11 +6,11 @@ export default function Header() {
       data-aos="fade-down"
       data-aos-easing="ease-out-cubic"
       data-aos-duration="1000"
-      className="relative flex w-full items-center justify-center p-4 md:p-10 overflow-hidden mt-[4vh]"
+      className="relative flex w-full min-h-[60vh] md:min-h-[70vh] items-center mt-[74px] overflow-hidden"
     >
       {/* 1. VÍDEO DE FUNDO */}
       <video
-        className="absolute inset-0 w-full max-h-[60vh]  md:max-h-[70vh] object-cover z-0"
+        className="absolute inset-0 w-full h-full object-cover z-0"
         src="/imgs/video-header2.mp4"
         autoPlay
         loop
@@ -20,81 +20,54 @@ export default function Header() {
       />
 
       {/* 2. OVERLAY GRADIENTE */}
+      <div className="absolute inset-0 z-10 bg-black/30"></div>
       <div
         className="absolute inset-0 z-10"
         style={{
-          backgroundImage: "linear-gradient(to top, #2f3e46 5%, transparent 90%)",
+          backgroundImage: "linear-gradient(to top, #2f3e46 0%, transparent 90%)",
         }}
       ></div>
 
-      {/* 3. CONTEÚDO DO HEADER */}
-      <div
-        className="relative z-20 flex flex-col md:flex-row items-center md:items-center gap-10 md:gap-[15vh] w-full max-w-6xl"
-        id="home"
-      >
-        {/* Título */}
-        <div className="w-full text-left md:w-1/2">
-          <h2 className="relative h-auto text-3xl sm:text-4xl md:text-6xl font-bold font-[Fonarto] mb-6 sm:mb-10 leading-snug">
-            {/* Linha 1 */}
-            <span className="relative inline-block">
-              <span
-                aria-hidden="true"
-                className="absolute left-0 top-0 z-0 select-none whitespace-nowrap"
-                style={{
-                  transform: "translate(0px, 6px)",
-                  color: "#000",
-                  filter: "blur(20px)",
-                  opacity: "0.9",
-                }}
-              >
-                Conectando&nbsp;
-                <b className="whitespace-nowrap">Tradição</b>
-              </span>
-              <span className="relative z-10 whitespace-nowrap bg-gradient-to-r from-[#d1d1d1] to-[#f4f4f4] bg-clip-text text-transparent">
-                Conectando&nbsp;
-                <b className="bg-gradient-to-r from-[#04a501] to-[#06D001] bg-clip-text text-transparent">
-                  Tradição
-                </b>
-              </span>
+      {/* 3. CONTEÚDO DO HEADER - CONTAINER PRINCIPAL */}
+      <div className="relative z-20 flex flex-col md:flex-row items-center justify-between w-full max-w-7xl mx-auto px-6 md:px-12 gap-10">
+        
+        {/* --- DIV 1: LADO ESQUERDO (TEXTO) --- */}
+        {/* Aumentado de w-1/2 para w-[60%] no desktop para dar mais espaço ao texto */}
+        <div className="w-full md:w-[60%] flex justify-start text-left">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-[Fonarto] leading-tight drop-shadow-[0_4px_6px_rgba(0,0,0,0.9)]">
+            
+            {/* Linha 1: Protegida com whitespace-nowrap para não quebrar no meio */}
+            <span className="inline-block whitespace-nowrap">
+              <span className="text-white">Conectando </span>
+              <span className="text-[#06D001]">Tradição</span>
             </span>
-
+            
             <br />
-
+            
             {/* Linha 2 */}
-            <span className="relative inline-block">
-              <span
-                aria-hidden="true"
-                className="absolute left-0 top-0 z-0 select-none whitespace-nowrap"
-                style={{
-                  transform: "translate(0px, 6px)",
-                  color: "#000",
-                  filter: "blur(20px)",
-                  opacity: "0.9",
-                }}
-              >
-                e <b className="whitespace-nowrap">Inovação</b> no Vale
-              </span>
-              <span className="relative z-10 bg-gradient-to-r from-[#d1d1d1] to-[#f4f4f4] bg-clip-text text-transparent">
-                e{" "}
-                <b className="whitespace-nowrap bg-gradient-to-r from-[#04a501] to-[#06D001] bg-clip-text text-transparent">
-                  Inovação
-                </b>{" "}
-                no Vale
-              </span>
+            <span className="inline-block whitespace-nowrap">
+              <span className="text-white">e </span>
+              <span className="text-[#06D001]">Inovação</span>
+              <span className="text-white"> no Vale</span>
             </span>
+
           </h2>
         </div>
 
-        {/* Imagem lateral — escondida em mobile */}
-        <div className="hidden md:block relative h-64 sm:h-80 md:h-[25rem] md:w-[55vh]">
-          <Image
-            src="/imgs/bubatag.svg"
-            alt="Ilustração do sistema de monitoramento"
-            fill
-            className="object-contain [filter:drop-shadow(0_0px_10px_rgba(5,218,0,0.2))]"
-            priority
-          />
+        {/* --- DIV 2: LADO DIREITO (IMAGEM BUBATAG) --- */}
+        {/* Reduzido para w-[40%] para compensar o aumento do texto */}
+        <div className="hidden md:flex w-full md:w-[40%] justify-center md:justify-end">
+          <div className="relative w-[280px] h-[280px] sm:w-[350px] sm:h-[350px] md:w-[450px] md:h-[450px]">
+            <Image
+              src="/imgs/bubatag.svg"
+              alt="Logo Bubatag"
+              fill
+              className="object-contain drop-shadow-[0_0px_15px_rgba(5,218,0,0.2)]"
+              priority
+            />
+          </div>
         </div>
+
       </div>
     </section>
   );
